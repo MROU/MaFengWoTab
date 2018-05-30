@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mafengwotab.mafengwotab.MainActivity">
+   <ImageView
+       android:id="@+id/iv_header"
+       android:layout_width="match_parent"
+       android:layout_height="55dp"
+       android:src="@mipmap/icon_header"
+       />
+
+
+<LinearLayout
+    android:id="@+id/ll_tab"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    <com.mafengwotab.mafengwotab.view.BizieViewPagerIndicator
+        android:id="@+id/id_indicator"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        app:item_count="3" >
+    </com.mafengwotab.mafengwotab.view.BizieViewPagerIndicator>
+    <ImageView
+        android:id="@+id/iv_showmore"
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_expand_more_black_24dp"
+        />
+</LinearLayout>
+ <View
+        android:id="@+id/bg_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#66000000"/>
+<android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
