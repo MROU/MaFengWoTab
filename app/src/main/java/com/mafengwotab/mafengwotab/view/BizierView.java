@@ -33,8 +33,6 @@ public class BizierView extends View{
     //這裡用於控制弧度變化區域
     float viewoffset;
     //下面這兩個變量，可以使其下劃線位置變化
-    private float  mTranslationX;
-    private float  mTranslationY;
     Context context;
     public BizierView(Context context){
         super(context);
@@ -51,15 +49,17 @@ public class BizierView extends View{
         //对于quadTo  mPath.quadTo(x1, y1, x2, y2) (x1,y1) 为控制点，(x2,y2)为结束点。
         //这里暂时先用quadTo来控制一个点实现波浪线效果，如果要完全模仿蚂蜂窝，可以使用cubicTo，控制两个节点的Y坐标变化
         mPath.moveTo(width*RADIO+mTranslationX,height*2);
+        //這裡可以去改變一下各個參數，如MAXRAD，就知道大概的含義了，4*MAXRAD/width這個主要是下劃線與高度的比值2*MAXRAD/（width*2）
         if(viewoffset<=0.5){
-            mPath.quadTo(width/2+mTranslationX,height*2+MAXRAD-mTranslationY*(MAXRAD*2/width),width-width*RADIO+mTranslationX,height*2);
+            mPath.quadTo(width/2+mTranslationX,height*2+MAXRAD-mTranslationY*4*MAXRAD/width,width-width*RADIO+mTranslationX,height*2);
         }else{
-            mPath.quadTo(width/2+mTranslationX,height*2-(MAXRAD*2)+mTranslationY*(MAXRAD*2/width),width-width*RADIO+mTranslationX,height*2);
+            mPath.quadTo(width/2+mTranslationX,(height-MAXRAD)*2+mTranslationY*4*MAXRAD/width,width-width*RADIO+mTranslationX,height*2);
         }
         canvas.drawPath(mPath, mPaint);
     }
 
-
+    private float  mTranslationX;
+    private float  mTranslationY;
     public void scroll(int position,float offset,int mTabVisibleCount){
 
         mTranslationX = UIUtil.getScreenWidth(context)/mTabVisibleCount * (position + offset);
@@ -98,7 +98,7 @@ public class BizierView extends View{
         init(context);
     }
 
-    public  float dpToPixel(float dp){
+    public  float dpToPixel(float dp) {
         DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
         return dp * metrics.density;
     }
