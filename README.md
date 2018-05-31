@@ -46,6 +46,7 @@
 
 微信公众号：ncistedu
 
+小程序：https://minapp.com/miniapp/7153/
 
 开发的插件： https://addons.mozilla.org/developers/addon/photos-download/validation-result/617663
 
@@ -58,6 +59,8 @@ https://juejin.im/entry/5771cb966be3ff00639ffcb2
 
 黑色半透明背景的popupwindow:
 https://github.com/lololiu/demo4popupwindow
+
+
 
 
 
