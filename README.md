@@ -42,8 +42,6 @@
 
 自频道：http://i.youku.com/startplan
 
-个人网站：http://www.startplan.cn/
-
 微信公众号：ncistedu
 
 小程序：https://minapp.com/miniapp/7153/
